@@ -398,10 +398,5 @@ namespace GdC
                 return false;
             }
         }
-
-        private void test()
-        {
-            //My
-        }
     }
 }

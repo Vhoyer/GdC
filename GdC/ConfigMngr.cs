@@ -126,7 +126,7 @@ namespace GdC
 
         public ConfigMngr()
         {
-            dirmngr = new DirMngr(DirMngr.Dir + @"\Config.ini");
+            dirmngr = new DirMngr(DirMngr.Dir + @"\Config(" + DirMngr.User + ").ini");
             LoadConfig();
         }
 

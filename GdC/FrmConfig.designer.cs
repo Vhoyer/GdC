@@ -64,6 +64,7 @@
             this.tbMysqlDir = new System.Windows.Forms.TextBox();
             this.lblMysqlDir = new System.Windows.Forms.Label();
             this.fbd1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnAplicar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sptConfig)).BeginInit();
             this.sptConfig.Panel1.SuspendLayout();
             this.sptConfig.Panel2.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             this.flpBackup.Controls.Add(this.btnSalvar);
             this.flpBackup.Controls.Add(this.btnClose);
+            this.flpBackup.Controls.Add(this.btnAplicar);
             this.flpBackup.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpBackup.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpBackup.Location = new System.Drawing.Point(0, 373);
@@ -436,6 +438,16 @@
             this.lblMysqlDir.TabIndex = 16;
             this.lblMysqlDir.Text = "Diretorio do MySQL";
             // 
+            // btnAplicar
+            // 
+            this.btnAplicar.Location = new System.Drawing.Point(265, 3);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(75, 23);
+            this.btnAplicar.TabIndex = 2;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
             // FrmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,5 +523,6 @@
         private System.Windows.Forms.DateTimePicker dtpW;
         private System.Windows.Forms.NumericUpDown nmrMin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAplicar;
     }
 }

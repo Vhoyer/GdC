@@ -1,6 +1,6 @@
 ﻿namespace GdC
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stslbl1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mStrMain = new System.Windows.Forms.MenuStrip();
             this.smiCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,18 +100,6 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panel_Update = new System.Windows.Forms.Panel();
             this.tbECod = new System.Windows.Forms.TextBox();
-            this.panel_Search = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btEdit = new System.Windows.Forms.Button();
-            this.btDelete = new System.Windows.Forms.Button();
-            this.btObs = new System.Windows.Forms.Button();
-            this.btCancel = new System.Windows.Forms.Button();
-            this.mtbSearch = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btSearch = new System.Windows.Forms.Button();
-            this.cbSearchType = new System.Windows.Forms.ComboBox();
-            this.dgSearch = new System.Windows.Forms.DataGridView();
             this.textBoxEObs = new System.Windows.Forms.TextBox();
             this.maskedTextBoxENumber = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxECity = new System.Windows.Forms.ComboBox();
@@ -147,10 +135,23 @@
             this.buttonEClean = new System.Windows.Forms.Button();
             this.buttonECancel = new System.Windows.Forms.Button();
             this.buttonEDelete = new System.Windows.Forms.Button();
+            this.panel_Search = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
+            this.btObs = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.mtbSearch = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btSearch = new System.Windows.Forms.Button();
+            this.cbSearchType = new System.Windows.Forms.ComboBox();
+            this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panel_InsertSale = new System.Windows.Forms.Panel();
             this.panel_SearchSales = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tmr = new System.Windows.Forms.Timer(this.components);
+            this.stslblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.mStrMain.SuspendLayout();
             this.panelWelcome.SuspendLayout();
@@ -158,27 +159,28 @@
             this.panel_Insert.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel_Update.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.panel_Search.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.stslblTime,
+            this.stslbl1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 439);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(754, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // stslbl1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            this.stslbl1.Name = "stslbl1";
+            this.stslbl1.Size = new System.Drawing.Size(0, 17);
             // 
             // mStrMain
             // 
@@ -347,7 +349,7 @@
             // novaVendaToolStripMenuItem
             // 
             this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            this.novaVendaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.novaVendaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
             this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.novaVendaToolStripMenuItem.Text = "Nova Venda";
@@ -410,8 +412,8 @@
             // 
             // panelWelcome
             // 
-            this.panelWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelWelcome.Controls.Add(this.dataGridView1);
             this.panelWelcome.Controls.Add(this.label3);
@@ -471,8 +473,8 @@
             // 
             // panel_Insert
             // 
-            this.panel_Insert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel_Insert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Insert.Controls.Add(this.textBoxObs);
             this.panel_Insert.Controls.Add(this.comboBoxCity);
@@ -511,8 +513,8 @@
             // 
             // textBoxObs
             // 
-            this.textBoxObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxObs.Location = new System.Drawing.Point(12, 206);
             this.textBoxObs.Multiline = true;
@@ -571,8 +573,8 @@
             // 
             // labelObs
             // 
-            this.labelObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.labelObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelObs.AutoSize = true;
             this.labelObs.Location = new System.Drawing.Point(9, 190);
@@ -809,8 +811,8 @@
             // 
             // panel_Update
             // 
-            this.panel_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Update.Controls.Add(this.tbECod);
             this.panel_Update.Controls.Add(this.textBoxEObs);
@@ -859,171 +861,10 @@
             this.tbECod.TabIndex = 64;
             this.tbECod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbECod_KeyDown);
             // 
-            // panel_Search
-            // 
-            this.panel_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Search.Controls.Add(this.flowLayoutPanel3);
-            this.panel_Search.Controls.Add(this.mtbSearch);
-            this.panel_Search.Controls.Add(this.label2);
-            this.panel_Search.Controls.Add(this.label1);
-            this.panel_Search.Controls.Add(this.btSearch);
-            this.panel_Search.Controls.Add(this.cbSearchType);
-            this.panel_Search.Controls.Add(this.dgSearch);
-            this.panel_Search.Location = new System.Drawing.Point(750, 12);
-            this.panel_Search.Name = "panel_Search";
-            this.panel_Search.Size = new System.Drawing.Size(754, 409);
-            this.panel_Search.TabIndex = 6;
-            this.panel_Search.Visible = false;
-            this.panel_Search.VisibleChanged += new System.EventHandler(this.panel_Search_VisibleChanged);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.btEdit);
-            this.flowLayoutPanel3.Controls.Add(this.btDelete);
-            this.flowLayoutPanel3.Controls.Add(this.btObs);
-            this.flowLayoutPanel3.Controls.Add(this.btCancel);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 377);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(754, 32);
-            this.flowLayoutPanel3.TabIndex = 30;
-            // 
-            // btEdit
-            // 
-            this.btEdit.Location = new System.Drawing.Point(669, 3);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 4;
-            this.btEdit.TabStop = false;
-            this.btEdit.Text = "Editar";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            this.btEdit.MouseHover += new System.EventHandler(this.btEdit_MouseHover);
-            // 
-            // btDelete
-            // 
-            this.btDelete.Location = new System.Drawing.Point(581, 3);
-            this.btDelete.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(75, 23);
-            this.btDelete.TabIndex = 3;
-            this.btDelete.TabStop = false;
-            this.btDelete.Text = "Excluir";
-            this.btDelete.UseVisualStyleBackColor = true;
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
-            this.btDelete.MouseHover += new System.EventHandler(this.btDelete_MouseHover);
-            // 
-            // btObs
-            // 
-            this.btObs.AutoSize = true;
-            this.btObs.Location = new System.Drawing.Point(488, 3);
-            this.btObs.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
-            this.btObs.Name = "btObs";
-            this.btObs.Size = new System.Drawing.Size(80, 23);
-            this.btObs.TabIndex = 5;
-            this.btObs.TabStop = false;
-            this.btObs.Text = "Observações";
-            this.btObs.UseVisualStyleBackColor = true;
-            this.btObs.Click += new System.EventHandler(this.btObs_Click);
-            this.btObs.MouseHover += new System.EventHandler(this.btObs_MouseHover);
-            // 
-            // btCancel
-            // 
-            this.btCancel.Location = new System.Drawing.Point(400, 3);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
-            this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(75, 23);
-            this.btCancel.TabIndex = 2;
-            this.btCancel.TabStop = false;
-            this.btCancel.Text = "Cancelar";
-            this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
-            // 
-            // mtbSearch
-            // 
-            this.mtbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtbSearch.Location = new System.Drawing.Point(266, 32);
-            this.mtbSearch.Name = "mtbSearch";
-            this.mtbSearch.Size = new System.Drawing.Size(395, 20);
-            this.mtbSearch.TabIndex = 7;
-            this.mtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbSearch_KeyDown);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(204, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Pesquisa";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Método de pesquisa";
-            // 
-            // btSearch
-            // 
-            this.btSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSearch.Location = new System.Drawing.Point(667, 30);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(75, 23);
-            this.btSearch.TabIndex = 4;
-            this.btSearch.Text = "Pesquisar";
-            this.btSearch.UseVisualStyleBackColor = true;
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
-            // 
-            // cbSearchType
-            // 
-            this.cbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearchType.Items.AddRange(new object[] {
-            "Mostrar Tudo",
-            "Código",
-            "Nome",
-            "CPF",
-            "Telefone",
-            "Celular",
-            "E-mail",
-            "Rua",
-            "Bairro",
-            "Cidade",
-            "CEP",
-            "Aniversário"});
-            this.cbSearchType.Location = new System.Drawing.Point(15, 32);
-            this.cbSearchType.Name = "cbSearchType";
-            this.cbSearchType.Size = new System.Drawing.Size(131, 21);
-            this.cbSearchType.TabIndex = 2;
-            this.cbSearchType.SelectedIndexChanged += new System.EventHandler(this.cbSearchType_SelectedIndexChanged);
-            // 
-            // dgSearch
-            // 
-            this.dgSearch.AllowUserToAddRows = false;
-            this.dgSearch.AllowUserToDeleteRows = false;
-            this.dgSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgSearch.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearch.Location = new System.Drawing.Point(15, 74);
-            this.dgSearch.Name = "dgSearch";
-            this.dgSearch.ReadOnly = true;
-            this.dgSearch.Size = new System.Drawing.Size(727, 294);
-            this.dgSearch.TabIndex = 0;
-            // 
             // textBoxEObs
             // 
-            this.textBoxEObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxEObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEObs.Enabled = false;
             this.textBoxEObs.Location = new System.Drawing.Point(12, 219);
@@ -1097,8 +938,8 @@
             // 
             // labelEObs
             // 
-            this.labelEObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.labelEObs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEObs.AutoSize = true;
             this.labelEObs.Location = new System.Drawing.Point(9, 203);
@@ -1366,10 +1207,171 @@
             this.buttonEDelete.UseVisualStyleBackColor = true;
             this.buttonEDelete.Click += new System.EventHandler(this.buttonEDelete_Click);
             // 
+            // panel_Search
+            // 
+            this.panel_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Search.Controls.Add(this.flowLayoutPanel3);
+            this.panel_Search.Controls.Add(this.mtbSearch);
+            this.panel_Search.Controls.Add(this.label2);
+            this.panel_Search.Controls.Add(this.label1);
+            this.panel_Search.Controls.Add(this.btSearch);
+            this.panel_Search.Controls.Add(this.cbSearchType);
+            this.panel_Search.Controls.Add(this.dgSearch);
+            this.panel_Search.Location = new System.Drawing.Point(750, 12);
+            this.panel_Search.Name = "panel_Search";
+            this.panel_Search.Size = new System.Drawing.Size(754, 409);
+            this.panel_Search.TabIndex = 6;
+            this.panel_Search.Visible = false;
+            this.panel_Search.VisibleChanged += new System.EventHandler(this.panel_Search_VisibleChanged);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.btEdit);
+            this.flowLayoutPanel3.Controls.Add(this.btDelete);
+            this.flowLayoutPanel3.Controls.Add(this.btObs);
+            this.flowLayoutPanel3.Controls.Add(this.btCancel);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 377);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(754, 32);
+            this.flowLayoutPanel3.TabIndex = 30;
+            // 
+            // btEdit
+            // 
+            this.btEdit.Location = new System.Drawing.Point(669, 3);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 4;
+            this.btEdit.TabStop = false;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            this.btEdit.MouseHover += new System.EventHandler(this.btEdit_MouseHover);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(581, 3);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(75, 23);
+            this.btDelete.TabIndex = 3;
+            this.btDelete.TabStop = false;
+            this.btDelete.Text = "Excluir";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            this.btDelete.MouseHover += new System.EventHandler(this.btDelete_MouseHover);
+            // 
+            // btObs
+            // 
+            this.btObs.AutoSize = true;
+            this.btObs.Location = new System.Drawing.Point(488, 3);
+            this.btObs.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
+            this.btObs.Name = "btObs";
+            this.btObs.Size = new System.Drawing.Size(80, 23);
+            this.btObs.TabIndex = 5;
+            this.btObs.TabStop = false;
+            this.btObs.Text = "Observações";
+            this.btObs.UseVisualStyleBackColor = true;
+            this.btObs.Click += new System.EventHandler(this.btObs_Click);
+            this.btObs.MouseHover += new System.EventHandler(this.btObs_MouseHover);
+            // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(400, 3);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(10, 3, 3, 6);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 2;
+            this.btCancel.TabStop = false;
+            this.btCancel.Text = "Cancelar";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
+            // mtbSearch
+            // 
+            this.mtbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtbSearch.Location = new System.Drawing.Point(266, 32);
+            this.mtbSearch.Name = "mtbSearch";
+            this.mtbSearch.Size = new System.Drawing.Size(395, 20);
+            this.mtbSearch.TabIndex = 7;
+            this.mtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbSearch_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(204, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Pesquisa";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Método de pesquisa";
+            // 
+            // btSearch
+            // 
+            this.btSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSearch.Location = new System.Drawing.Point(667, 30);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(75, 23);
+            this.btSearch.TabIndex = 4;
+            this.btSearch.Text = "Pesquisar";
+            this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
+            // cbSearchType
+            // 
+            this.cbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchType.Items.AddRange(new object[] {
+            "Mostrar Tudo",
+            "Código",
+            "Nome",
+            "CPF",
+            "Telefone",
+            "Celular",
+            "E-mail",
+            "Rua",
+            "Bairro",
+            "Cidade",
+            "CEP",
+            "Aniversário"});
+            this.cbSearchType.Location = new System.Drawing.Point(15, 32);
+            this.cbSearchType.Name = "cbSearchType";
+            this.cbSearchType.Size = new System.Drawing.Size(131, 21);
+            this.cbSearchType.TabIndex = 2;
+            this.cbSearchType.SelectedIndexChanged += new System.EventHandler(this.cbSearchType_SelectedIndexChanged);
+            // 
+            // dgSearch
+            // 
+            this.dgSearch.AllowUserToAddRows = false;
+            this.dgSearch.AllowUserToDeleteRows = false;
+            this.dgSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgSearch.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearch.Location = new System.Drawing.Point(15, 74);
+            this.dgSearch.Name = "dgSearch";
+            this.dgSearch.ReadOnly = true;
+            this.dgSearch.Size = new System.Drawing.Size(727, 294);
+            this.dgSearch.TabIndex = 0;
+            // 
             // panel_InsertSale
             // 
-            this.panel_InsertSale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel_InsertSale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_InsertSale.Location = new System.Drawing.Point(0, 26);
             this.panel_InsertSale.Name = "panel_InsertSale";
@@ -1379,8 +1381,8 @@
             // 
             // panel_SearchSales
             // 
-            this.panel_SearchSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel_SearchSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_SearchSales.Location = new System.Drawing.Point(770, 26);
             this.panel_SearchSales.Name = "panel_SearchSales";
@@ -1394,7 +1396,13 @@
             this.tmr.Interval = 1000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 
-            // Form1
+            // stslblTime
+            // 
+            this.stslblTime.Name = "stslblTime";
+            this.stslblTime.Size = new System.Drawing.Size(93, 17);
+            this.stslblTime.Text = "DataTime.Today";
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1410,7 +1418,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mStrMain;
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.Text = "Gerenciador de Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -1425,12 +1433,12 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_Update.ResumeLayout(false);
             this.panel_Update.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.panel_Search.ResumeLayout(false);
             this.panel_Search.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1528,7 +1536,7 @@
         private System.Windows.Forms.Button buttonEDelete;
         private System.Windows.Forms.ComboBox comboBoxUF;
         private System.Windows.Forms.ComboBox comboBoxCity;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel stslbl1;
         private System.Windows.Forms.ComboBox comboBoxECity;
         private System.Windows.Forms.ComboBox comboBoxEUF;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxENumber;
@@ -1559,6 +1567,7 @@
         private System.Windows.Forms.ToolStripMenuItem msiConfig;
         private System.Windows.Forms.ToolStripMenuItem smiPrefs;
         public System.Windows.Forms.Timer tmr;
+        private System.Windows.Forms.ToolStripStatusLabel stslblTime;
     }
 }
 

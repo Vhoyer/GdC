@@ -11,16 +11,21 @@ namespace GdC
     class DirMngr
     {
         static string dir = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
-        string User = Environment.UserName;
-        private string path, dirpath;
-        public enum Dirt
+        static string user = Environment.UserName;
+
+        public static string User
         {
-            file, folder
+            get { return user; }
         }
 
         public static string Dir
         {
             get { return dir; }
+        }
+        private string path, dirpath;
+        public enum Dirt
+        {
+            file, folder
         }
 
         #region "Construtor da classe"

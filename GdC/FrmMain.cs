@@ -12,7 +12,7 @@ using System.IO;
 
 namespace GdC
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
         string _Nome;
         string _CPF;
@@ -33,7 +33,7 @@ namespace GdC
             Insert,Update
         }
 
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -88,7 +88,7 @@ namespace GdC
             this.panel_Search.Visible = false;
             this.panel_SearchSales.Visible = false;
             this.panel_Update.Visible = false;
-            this.toolStripStatusLabel1.Text = "";
+            this.stslbl1.Text = "";
         }
 
         private void ClearFields()
@@ -139,7 +139,7 @@ namespace GdC
 
         private void ComboBoxes(panel pnl)
         {
-            this.toolStripStatusLabel1.Text = "Carregando...";
+            this.stslbl1.Text = "Carregando...";
             CbList dbCtrl = new CbList();
 
             if (pnl == panel.Insert)
@@ -158,7 +158,7 @@ namespace GdC
                 this.comboBoxECity.DataSource = dbCtrl.listCity(this.comboBoxUF.Text);
                 this.comboBoxECity.DisplayMember = "Nome";
             }
-            this.toolStripStatusLabel1.Text = "Carregado";
+            this.stslbl1.Text = "Carregado";
         }
 
         private void FixValues()
@@ -807,9 +807,11 @@ namespace GdC
         {
             ConfigMngr config = new ConfigMngr();
             
+            stslblTime.Text = DateTime.Now.ToLongTimeString();
+
             if (!config.BackupEnable)
             {
-                //tmr.Stop();
+                tmr.Stop();
             }
         }
     }

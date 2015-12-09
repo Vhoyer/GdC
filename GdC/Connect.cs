@@ -16,6 +16,7 @@ namespace GdC
             password = "vsDb@612", 
             database = "GdC";
 
+        #region "variaveis encapsuladas"
         public static MySqlConnection Conn
         {
             get { return Connect.conn; }
@@ -44,7 +45,8 @@ namespace GdC
         {
             get { return database; }
             set { database = value; }
-        }
+        } 
+        #endregion
 
         /// <summary>
         /// Cria uma conexão com o banco de dados
@@ -68,13 +70,30 @@ namespace GdC
             {
                 try
                 {
-                    ConnStr = string.Format("server={0};user id={1}; password={2};database=mysql; pooling=false", "127.0.0.1", "root", "");
+                    user = "root";
+                    server = "127.0.0.1";
+                    password = "";
+
+                    ConnStr = string.Format("server={0};user id={1}; password={2};database=mysql; pooling=false", server, user, password);
                     conn = new MySqlConnection(ConnStr);
                     conn.Open();
                 }
-                catch (MySqlException ERRO)
+                catch (MySqlException)
                 {
-                    throw ERRO;
+                    try
+                    {
+                        user = "root";
+                        server = "127.0.0.1";
+                        password = "ALUNOS";
+
+                        ConnStr = string.Format("server={0};user id={1}; password={2};database=mysql; pooling=false", server, user, password);
+                        conn = new MySqlConnection(ConnStr);
+                        conn.Open();
+                    }
+                    catch (MySqlException ERRO)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Erro ao conectar ao banco de dados./n/r/n/rMais Detalhes:/n/r/n/r" + ERRO.Message, "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    }
                 }
             }
 

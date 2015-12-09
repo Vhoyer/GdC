@@ -82,6 +82,7 @@ namespace GdC
             dirmngr = new DirMngr(config.BackupFolder + @"\Dumps\");
 
             List<string> cmdLst = new List<string>();
+            cmdLst.Add("echo off");
             cmdLst.Add("cd " + '"' + config.MysqlFolder + @"\bin" + '"');
             cmdLst.Add(
                 "mysqldump -u " + Connect.User +

@@ -158,7 +158,7 @@ namespace GdC
 
         private void FrmConfig_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form1 frm = new Form1();
+            FrmMain frm = new FrmMain();
             frm.tmr.Start();
         }
 
@@ -215,6 +215,29 @@ namespace GdC
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void btnAplicar_Click(object sender, EventArgs e)
+        {
+            ConfigMngr config = new ConfigMngr();
+
+            config.BackupFolder = tbDirBack.Text;
+            config.BackupTime = nmrHora.Value + ":" + nmrMin.Value;
+            config.BackupEnable = cbEnable.Checked;
+            config.MysqlFolder = tbMysqlDir.Text;
+            config.BackupFrequency = checkFreq();
+            config.BackupDay = dtpA.Text.Split('/')[0];
+            config.BackupMonth = dtpA.Text.Split('/')[1];
+            config.BackupDofW = dtpW.Text;
+
+            try
+            {
+                config.UpdateFile();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Erro: " + err.Message + "\n\nDetalhes:\n" + err, "Erro");
             }
         }
     }
