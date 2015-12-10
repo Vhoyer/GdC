@@ -113,7 +113,7 @@ namespace GdC
                 case 'D':
                     retorno = "Diario";
                     break;
-                case 'W':
+                case 'S':
                     retorno = "Semanal";
                     break;
                 case 'Q':
@@ -146,7 +146,7 @@ namespace GdC
                     ch = 'Q';
                     break;
                 case "Semanal":
-                    ch = 'W';
+                    ch = 'S';
                     break;
                 case "Diario":
                     ch = 'D';
@@ -173,7 +173,15 @@ namespace GdC
         private void btnDoBackup_Click(object sender, EventArgs e)
         {
             BackupMngr backup = new BackupMngr();
-            backup.backupDb();
+            try
+            {
+                backup.backupDb();
+                MessageBox.Show("Backup realizado com Sucesso", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Erro: " + err.Message, "Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnMysqlDir_Click(object sender, EventArgs e)
@@ -239,6 +247,12 @@ namespace GdC
             {
                 MessageBox.Show("Erro: " + err.Message + "\n\nDetalhes:\n" + err, "Erro");
             }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            BackupMngr backup = new BackupMngr();
+            backup.restoreDb();
         }
     }
 }

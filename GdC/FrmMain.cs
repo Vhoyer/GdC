@@ -265,6 +265,7 @@ namespace GdC
             this.panel_Search.Visible = true;
             this.cbSearchType.Text = "Mostra Tudo";
             this.mtbSearch.Enabled = false;
+            this.btSearch.Enabled = false;
         }
 
         private void nomeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -671,10 +672,13 @@ namespace GdC
 
         private void cbSearchType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chkMask.Checked = true;
+
             if (cbSearchType.Text != "Mostrar Tudo")
             {
                 mtbSearch.Enabled = true;
                 btSearch.Enabled = true;
+                panel_Search_VisibleChanged(e, e);
             }
             else
             {
@@ -809,9 +813,49 @@ namespace GdC
             
             stslblTime.Text = DateTime.Now.ToLongTimeString();
 
-            if (!config.BackupEnable)
+            if (config.BackupEnable)
             {
-                tmr.Stop();
+                if (config.BackupFrequency.ToString().ToUpper() == "D")
+                {
+                    if (config.BackupTime == DateTime.Now.ToShortTimeString() && !config.DidHappened)
+                    {
+                        config.DidHappened = true;
+                        config.UpdateFile();
+                        MessageBox.Show("oi");
+                    }
+                    else if (!(config.BackupTime == DateTime.Now.ToShortTimeString()) && config.DidHappened)
+                    {
+                        config.DidHappened = false;
+                    }
+                }
+                else if (config.BackupFrequency.ToString().ToUpper() == "S")
+                {
+
+                }
+                else if (config.BackupFrequency.ToString().ToUpper() == "Q")
+                {
+
+                }
+                else if (config.BackupFrequency.ToString().ToUpper() == "M")
+                {
+
+                }
+                else if (config.BackupFrequency.ToString().ToUpper() == "A")
+                {
+
+                }
+            }
+        }
+
+        private void chkMask_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkMask.Checked)
+            {
+                mtbSearch.Mask = "";
+            }
+            else
+            {
+                cbSearchType_SelectedIndexChanged(e, e);
             }
         }
     }

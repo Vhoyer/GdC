@@ -32,3 +32,11 @@ F:\Documents\Coding\C#\GdC\GdC\obj\Debug\GdC.csproj.GenerateResource.Cache
 C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\bin\Debug\GdC.exe.config
 C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.exe
 C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.pdb
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\bin\Debug\GdC.exe
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\bin\Debug\GdC.pdb
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\bin\Debug\MySql.Data.dll
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.csprojResolveAssemblyReference.cache
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.FrmMain.resources
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.FrmConfig.resources
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.Properties.Resources.resources
+C:\Users\V.Hoyer\OneDrive\programas\Csharp\GdC\GdC\obj\Debug\GdC.csproj.GenerateResource.Cache

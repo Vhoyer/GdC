@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stslblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.stslbl1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mStrMain = new System.Windows.Forms.MenuStrip();
             this.smiCliente = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,7 +152,7 @@
             this.panel_SearchSales = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tmr = new System.Windows.Forms.Timer(this.components);
-            this.stslblTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.chkMask = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.mStrMain.SuspendLayout();
             this.panelWelcome.SuspendLayout();
@@ -176,6 +177,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(754, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // stslblTime
+            // 
+            this.stslblTime.Name = "stslblTime";
+            this.stslblTime.Size = new System.Drawing.Size(93, 17);
+            this.stslblTime.Text = "DataTime.Today";
             // 
             // stslbl1
             // 
@@ -1212,6 +1219,7 @@
             this.panel_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Search.Controls.Add(this.chkMask);
             this.panel_Search.Controls.Add(this.flowLayoutPanel3);
             this.panel_Search.Controls.Add(this.mtbSearch);
             this.panel_Search.Controls.Add(this.label2);
@@ -1219,7 +1227,7 @@
             this.panel_Search.Controls.Add(this.btSearch);
             this.panel_Search.Controls.Add(this.cbSearchType);
             this.panel_Search.Controls.Add(this.dgSearch);
-            this.panel_Search.Location = new System.Drawing.Point(750, 12);
+            this.panel_Search.Location = new System.Drawing.Point(0, 26);
             this.panel_Search.Name = "panel_Search";
             this.panel_Search.Size = new System.Drawing.Size(754, 409);
             this.panel_Search.TabIndex = 6;
@@ -1396,11 +1404,18 @@
             this.tmr.Interval = 1000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 
-            // stslblTime
+            // chkMask
             // 
-            this.stslblTime.Name = "stslblTime";
-            this.stslblTime.Size = new System.Drawing.Size(93, 17);
-            this.stslblTime.Text = "DataTime.Today";
+            this.chkMask.AutoSize = true;
+            this.chkMask.Checked = true;
+            this.chkMask.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMask.Location = new System.Drawing.Point(639, 9);
+            this.chkMask.Name = "chkMask";
+            this.chkMask.Size = new System.Drawing.Size(108, 17);
+            this.chkMask.TabIndex = 31;
+            this.chkMask.Text = "Mascara de texto";
+            this.chkMask.UseVisualStyleBackColor = true;
+            this.chkMask.CheckedChanged += new System.EventHandler(this.chkMask_CheckedChanged);
             // 
             // FrmMain
             // 
@@ -1568,6 +1583,7 @@
         private System.Windows.Forms.ToolStripMenuItem smiPrefs;
         public System.Windows.Forms.Timer tmr;
         private System.Windows.Forms.ToolStripStatusLabel stslblTime;
+        private System.Windows.Forms.CheckBox chkMask;
     }
 }
 

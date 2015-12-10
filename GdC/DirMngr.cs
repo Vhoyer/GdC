@@ -197,7 +197,7 @@ namespace GdC
         /// Roda um comando no cmd
         /// </summary>
         /// <param name="cmds"></param>
-        public void runCmd(List<string> cmds)
+        public static void runCmd(List<string> cmds)
         {
             StringBuilder command = new StringBuilder();
             foreach (string str in cmds)
@@ -209,6 +209,35 @@ namespace GdC
             {
                 UseShellExecute = false,
                 //CreateNoWindow = true,
+                RedirectStandardInput = true,
+            };
+            Process proc = new Process() { StartInfo = psi };
+
+            proc.Start();
+
+            proc.StandardInput.Write(command.ToString());
+
+            proc.WaitForExit();
+            proc.Close();
+        }
+
+        /// <summary>
+        /// Roda um comando no cmd e logo em seguida fecha o prompt
+        /// </summary>
+        /// <param name="cmds"></param>
+        public static void runCmdExit(List<string> cmds)
+        {
+            cmds.Add("exit cmd.exe");
+            StringBuilder command = new StringBuilder();
+            foreach (string str in cmds)
+            {
+                command.Append(str + Environment.NewLine);
+            }
+
+            ProcessStartInfo psi = new ProcessStartInfo("cmd.exe")
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
                 RedirectStandardInput = true,
             };
             Process proc = new Process() { StartInfo = psi };

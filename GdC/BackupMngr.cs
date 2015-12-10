@@ -93,7 +93,44 @@ namespace GdC
 
             dirmngr.CreateDir();
 
-            dirmngr.runCmd(cmdLst);
+            DirMngr.runCmdExit(cmdLst);
+        }
+
+        public void restoreDb()
+        {
+            string file;
+            List<string> cmdLst = new List<string>();
+            System.Windows.Forms.OpenFileDialog opn = new System.Windows.Forms.OpenFileDialog()
+            {
+                DefaultExt = "sql",
+                InitialDirectory = config.BackupFolder + @"\Dumps",
+                Filter = "SQL script|*.sql"
+            };
+
+            if (opn.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    file = opn.FileName;
+
+                    cmdLst.Add("echo off");
+                    cmdLst.Add("cd " + '"' + config.MysqlFolder + @"\bin" + '"');
+                    cmdLst.Add(
+                        "mysql -u " + Connect.User +
+                        " -p" + Connect.Password +
+                        " --database=" + Connect.Database +
+                        " < " + '"' + file + '"'
+                        );
+
+                    DirMngr.runCmdExit(cmdLst);
+
+                    System.Windows.Forms.MessageBox.Show("Banco de dados restaurado com sucesso", "Restauração", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                }
+                catch (Exception err)
+                {
+                    System.Windows.Forms.MessageBox.Show("Erro: " + err.Message, "Restauração", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

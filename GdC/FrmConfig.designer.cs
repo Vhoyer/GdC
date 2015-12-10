@@ -36,7 +36,9 @@
             this.flpBackup = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAplicar = new System.Windows.Forms.Button();
             this.pnlCbackup = new System.Windows.Forms.Panel();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.grpFreq = new System.Windows.Forms.GroupBox();
             this.grpWeQ = new System.Windows.Forms.GroupBox();
             this.lblW = new System.Windows.Forms.Label();
@@ -64,7 +66,6 @@
             this.tbMysqlDir = new System.Windows.Forms.TextBox();
             this.lblMysqlDir = new System.Windows.Forms.Label();
             this.fbd1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.btnAplicar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sptConfig)).BeginInit();
             this.sptConfig.Panel1.SuspendLayout();
             this.sptConfig.Panel2.SuspendLayout();
@@ -150,8 +151,19 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnAplicar
+            // 
+            this.btnAplicar.Location = new System.Drawing.Point(265, 3);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(75, 23);
+            this.btnAplicar.TabIndex = 2;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
             // pnlCbackup
             // 
+            this.pnlCbackup.Controls.Add(this.btnRestore);
             this.pnlCbackup.Controls.Add(this.grpFreq);
             this.pnlCbackup.Controls.Add(this.btnDoBackup);
             this.pnlCbackup.Controls.Add(this.cbEnable);
@@ -163,6 +175,16 @@
             this.pnlCbackup.Size = new System.Drawing.Size(514, 367);
             this.pnlCbackup.TabIndex = 0;
             this.pnlCbackup.VisibleChanged += new System.EventHandler(this.pnlsConfig_VisibleChanged);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Location = new System.Drawing.Point(296, 19);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(105, 23);
+            this.btnRestore.TabIndex = 14;
+            this.btnRestore.Text = "Restaurar Backup";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // grpFreq
             // 
@@ -438,16 +460,6 @@
             this.lblMysqlDir.TabIndex = 16;
             this.lblMysqlDir.Text = "Diretorio do MySQL";
             // 
-            // btnAplicar
-            // 
-            this.btnAplicar.Location = new System.Drawing.Point(265, 3);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(75, 23);
-            this.btnAplicar.TabIndex = 2;
-            this.btnAplicar.Text = "Aplicar";
-            this.btnAplicar.UseVisualStyleBackColor = true;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
-            // 
             // FrmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,5 +536,6 @@
         private System.Windows.Forms.NumericUpDown nmrMin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAplicar;
+        private System.Windows.Forms.Button btnRestore;
     }
 }
