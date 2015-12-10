@@ -173,15 +173,8 @@ namespace GdC
         private void btnDoBackup_Click(object sender, EventArgs e)
         {
             BackupMngr backup = new BackupMngr();
-            try
-            {
-                backup.backupDb();
-                MessageBox.Show("Backup realizado com Sucesso", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Erro: " + err.Message, "Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            backup.backupDb();
         }
 
         private void btnMysqlDir_Click(object sender, EventArgs e)

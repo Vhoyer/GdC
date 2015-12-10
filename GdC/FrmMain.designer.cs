@@ -137,6 +137,7 @@
             this.buttonECancel = new System.Windows.Forms.Button();
             this.buttonEDelete = new System.Windows.Forms.Button();
             this.panel_Search = new System.Windows.Forms.Panel();
+            this.chkMask = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btEdit = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
@@ -152,7 +153,6 @@
             this.panel_SearchSales = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tmr = new System.Windows.Forms.Timer(this.components);
-            this.chkMask = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.mStrMain.SuspendLayout();
             this.panelWelcome.SuspendLayout();
@@ -1234,6 +1234,19 @@
             this.panel_Search.Visible = false;
             this.panel_Search.VisibleChanged += new System.EventHandler(this.panel_Search_VisibleChanged);
             // 
+            // chkMask
+            // 
+            this.chkMask.AutoSize = true;
+            this.chkMask.Checked = true;
+            this.chkMask.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMask.Location = new System.Drawing.Point(639, 9);
+            this.chkMask.Name = "chkMask";
+            this.chkMask.Size = new System.Drawing.Size(108, 17);
+            this.chkMask.TabIndex = 31;
+            this.chkMask.Text = "Mascara de texto";
+            this.chkMask.UseVisualStyleBackColor = true;
+            this.chkMask.CheckedChanged += new System.EventHandler(this.chkMask_CheckedChanged);
+            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.btEdit);
@@ -1404,32 +1417,19 @@
             this.tmr.Interval = 1000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 
-            // chkMask
-            // 
-            this.chkMask.AutoSize = true;
-            this.chkMask.Checked = true;
-            this.chkMask.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMask.Location = new System.Drawing.Point(639, 9);
-            this.chkMask.Name = "chkMask";
-            this.chkMask.Size = new System.Drawing.Size(108, 17);
-            this.chkMask.TabIndex = 31;
-            this.chkMask.Text = "Mascara de texto";
-            this.chkMask.UseVisualStyleBackColor = true;
-            this.chkMask.CheckedChanged += new System.EventHandler(this.chkMask_CheckedChanged);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 461);
             this.Controls.Add(this.mStrMain);
-            this.Controls.Add(this.panel_Search);
-            this.Controls.Add(this.panel_Update);
-            this.Controls.Add(this.panel_Insert);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panel_SearchSales);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel_InsertSale);
+            this.Controls.Add(this.panel_Search);
+            this.Controls.Add(this.panel_Update);
+            this.Controls.Add(this.panel_Insert);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mStrMain;

@@ -821,28 +821,78 @@ namespace GdC
                     {
                         config.DidHappened = true;
                         config.UpdateFile();
-                        MessageBox.Show("oi");
+                        BackupMngr backup = new BackupMngr();
+                        backup.backupDb();
                     }
                     else if (!(config.BackupTime == DateTime.Now.ToShortTimeString()) && config.DidHappened)
                     {
                         config.DidHappened = false;
+                        config.UpdateFile();
                     }
                 }
                 else if (config.BackupFrequency.ToString().ToUpper() == "S")
                 {
-
+                    if (config.BackupDofW == DateTime.Now.DayOfWeek.ToString() && !config.DidHappened)
+                    {
+                        config.DidHappened = true;
+                        config.UpdateFile();
+                        BackupMngr backup = new BackupMngr();
+                        backup.backupDb();
+                    }
+                    else if (!(config.BackupDofW == DateTime.Now.DayOfWeek.ToString()) && config.DidHappened)
+                    {
+                        config.DidHappened = false;
+                        config.UpdateFile();
+                    }
                 }
                 else if (config.BackupFrequency.ToString().ToUpper() == "Q")
                 {
-
+                    if (config.BackupDofW == DateTime.Now.DayOfWeek.ToString() && !config.DidHappened)
+                    {
+                        config.DidHappened = true;
+                        config.UpdateFile();
+                        BackupMngr backup = new BackupMngr();
+                        backup.backupDb();
+                    }
+                    else if (!(config.BackupDofW == DateTime.Now.DayOfWeek.ToString()) && config.DidHappened)
+                    {
+                        config.DidHappened = false;
+                        config.UpdateFile();
+                    }
                 }
                 else if (config.BackupFrequency.ToString().ToUpper() == "M")
                 {
-
+                    if (config.BackupDay == DateTime.Now.Day.ToString() && !config.DidHappened)
+                    {
+                        config.DidHappened = true;
+                        config.UpdateFile();
+                        BackupMngr backup = new BackupMngr();
+                        backup.backupDb();
+                    }
+                    else if (!(config.BackupDay == DateTime.Now.Day.ToString()) && config.DidHappened)
+                    {
+                        config.DidHappened = false;
+                        config.UpdateFile();
+                    }
                 }
                 else if (config.BackupFrequency.ToString().ToUpper() == "A")
                 {
-
+                    if (config.BackupMonth == DateTime.Now.Month.ToString() &&
+                        config.BackupDay == DateTime.Now.Day.ToString() &&
+                        !config.DidHappened)
+                    {
+                        config.DidHappened = true;
+                        config.UpdateFile();
+                        BackupMngr backup = new BackupMngr();
+                        backup.backupDb();
+                    }
+                    else if (!(config.BackupMonth == DateTime.Now.Month.ToString() &&
+                             config.BackupDay == DateTime.Now.Day.ToString()) && 
+                             config.DidHappened)
+                    {
+                        config.DidHappened = false;
+                        config.UpdateFile();
+                    }
                 }
             }
         }

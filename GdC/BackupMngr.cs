@@ -82,18 +82,27 @@ namespace GdC
             dirmngr = new DirMngr(config.BackupFolder + @"\Dumps\");
 
             List<string> cmdLst = new List<string>();
-            cmdLst.Add("echo off");
-            cmdLst.Add("cd " + '"' + config.MysqlFolder + @"\bin" + '"');
-            cmdLst.Add(
-                "mysqldump -u " + Connect.User +
-                " -p" + Connect.Password +
-                " -x -e -B " + Connect.Database +
-                " > " + '"' + config.BackupFolder + @"\Dumps\dumpGdcBackup" + date + ".sql" + '"'
-                );
+            try
+            {
+                cmdLst.Add("echo off");
+                cmdLst.Add("cd " + '"' + config.MysqlFolder + @"\bin" + '"');
+                cmdLst.Add(
+                    "mysqldump -u " + Connect.User +
+                    " -p" + Connect.Password +
+                    " -x -e -B " + Connect.Database +
+                    " > " + '"' + config.BackupFolder + @"\Dumps\dumpGdcBackup" + date + ".sql" + '"'
+                    );
 
-            dirmngr.CreateDir();
+                dirmngr.CreateDir();
 
-            DirMngr.runCmdExit(cmdLst);
+                DirMngr.runCmdExit(cmdLst);
+
+                System.Windows.Forms.MessageBox.Show("Backup realizado com sucesso", "Backup", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro: " + err.Message, "Backup", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
 
         public void restoreDb()
